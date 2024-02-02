@@ -1,0 +1,71 @@
+.root {
+    -fx-background-image: url('background.jpg'); /* Replace with your image file path */
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.text {
+    -fx-font-family: "Lucida Bright";
+}
+
+TextField {
+    -fx-font-size: 14;
+    -fx-padding: 5;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+VBox, HBox {
+    -fx-spacing: 10;
+}
+
+Label {
+    -fx-font-size: 16;
+}
+
+.Title {
+    -fx-font-weight: bold;
+    -fx-background-color: #DCD9D4;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+
+#headerLabel {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-background-color: #DCD9D4;
+    -fx-text-fill: #000000;
+    -fx-padding: 10;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-translate-y: -50;
+}
+
+Button {
+    -fx-background-color: #08b916;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    /*-fx-pref-width: 130;*/
+    -fx-font-size: 18;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease-in-out;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
+}
+
+Button:hover {
+    -fx-background-color: #27ae60;
+}
+
+Button:pressed {
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
+}
+
+
+#inputNumber {
+    -fx-padding: 10;
+}
