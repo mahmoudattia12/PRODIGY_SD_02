@@ -26,7 +26,7 @@ The Guessing Game is a desktop application built using JavaFX that allows users 
 
 To run the Guessing Game on your local machine you can simply use the executable jar file "Guessing Game.jar" provided in "out/artifacts/PRODIGY_SD_02_jar". 
 
-Also you may want run it from your IDE so follow these steps:
+Also you may want to run it from your IDE so follow these steps:
 
 1. Clone the repository:
 git clone [https://github.com/mahmoudattia12/PRODIGY_SD_02.git](https://github.com/mahmoudattia12/PRODIGY_SD_02.git)
