@@ -9,7 +9,6 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.Random;
@@ -23,7 +22,7 @@ public class GuessingGameController {
     @FXML
     private TextField guessedNumberField;
     @FXML
-    private VBox resultField;
+    private HBox resultField;
     @FXML
     private HBox generationHBox;
     private TextField currentTextField;
@@ -33,27 +32,34 @@ public class GuessingGameController {
     @FXML
     private void initialize() {
         currentTextField = inputStartRange;
+        inputStartRange.setText("1");
+        inputEndRange.setText("6");
         attempts = 0;
+        generateRandom(1, 6);
     }
 
     public void onGenerateButtonClick(ActionEvent actionEvent) {
         String startRangeStr = inputStartRange.getText(), endRangeStr = inputEndRange.getText();
         generationHBox.getChildren().clear();
+        resultField.getChildren().clear();
+        attempts = 0;
         if (isNumeric(startRangeStr) && isNumeric(endRangeStr)) {
             int start = Integer.parseInt(startRangeStr), end = Integer.parseInt(endRangeStr);
             if (start > end) showAlert("Start range must be smaller or equal to the end range!");
-            else {
-                Random random = new Random();
-                generatedNumber = random.nextInt(end - start + 1) + start;
-                System.out.println(generatedNumber);
-                Label label = new Label("Number generated successfully");
-                label.setId("generationLabel");
-                generationHBox.getChildren().addAll(label);
-            }
+            else generateRandom(start, end);
         } else {
             //alert
             showAlert("Please enter an integer value for the start and end range!");
         }
+    }
+
+    private void generateRandom(int start, int end) {
+        Random random = new Random();
+        generatedNumber = random.nextInt(end - start + 1) + start;
+        Label label = new Label("Number generated successfully");
+        label.getStyleClass().add("dynamicLabel");
+        label.setId("generationLabel");
+        generationHBox.getChildren().addAll(label);
     }
 
     private void showAlert(String message) {
@@ -71,33 +77,37 @@ public class GuessingGameController {
 
     public void onGuessButtonClick(ActionEvent actionEvent) {
         String guessedStr = guessedNumberField.getText();
+        resultField.getChildren().clear();
         if (isNumeric(guessedStr)) {
             int guessedNumber = Integer.parseInt(guessedStr);
             attempts++;
-            if (guessedNumber == generatedNumber) {
-                System.out.println(attempts);
-                System.out.println("Congrats");
-            } else {
-                //handle close or far here
-
-            }
+            resultField.getChildren().addAll(addLabel(guessedNumber));
         } else {
             //alert
             showAlert("Please enter an integer value for the guessed number!");
         }
     }
 
-    public void onNumberInputTyped(KeyEvent keyEvent) {
-        System.out.println("hi");
-        if (currentTextField == null) {
-            System.out.println("null");
-            return;
+    private Label addLabel(int guessedNumber) {
+        Label label;
+        if (guessedNumber == generatedNumber) {
+            label = new Label("Congratulations you've guessed the number successfully\n" + "Number of attempts = " + attempts);
+            label.getStyleClass().add("dynamicLabel");
+            label.setId("generationLabel");
+            attempts = 0;
+        } else {
+            if (guessedNumber > generatedNumber) label = new Label("Too high (larger than the generated number)");
+            else label = new Label("Too low (lower than the generated number)");
+            label.getStyleClass().add("dynamicLabel");
+            label.setId("wrongLabel");
         }
+        return label;
+    }
 
+    public void onNumberInputTyped(KeyEvent keyEvent) {
+        if (currentTextField == null) return;
         String input = currentTextField.getText();
         int indexPos = currentTextField.getCaretPosition() - 1;
-
-        System.out.println(indexPos);
         if (!isValidChar(input, keyEvent.getCharacter().charAt(0), indexPos)) {
             keyEvent.consume();
             // Remove the wrong character from the text field
@@ -109,7 +119,6 @@ public class GuessingGameController {
     @FXML
     private void onTextFieldClicked(MouseEvent event) {
         if (event.getSource() instanceof TextField) {
-            System.out.println("mouse clicked");
             currentTextField = (TextField) event.getSource();
         }
     }

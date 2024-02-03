@@ -42,18 +42,28 @@ Label {
     -fx-translate-y: -50;
 }
 
-#generationLabel {
+.dynamicLabel {
     -fx-font-weight: bold;
-    -fx-background-color: #6db2fd;
-    -fx-text-fill: #000000;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
     -fx-padding: 10;
 }
 
-Button {
+#generationLabel {
     -fx-background-color: #08b916;
     -fx-text-fill: #ffffff;
+    -fx-text-alignment: center;
+}
+
+#wrongLabel {
+    -fx-background-color: #b32727;
+    -fx-text-fill: #ffffff;
+    -fx-text-alignment: center;
+}
+
+Button {
+    -fx-background-color: #ffc117;
+    -fx-text-fill: #000000;
     -fx-font-weight: bold;
     -fx-padding: 10;
     /*-fx-pref-width: 130;*/
@@ -66,14 +76,13 @@ Button {
 }
 
 Button:hover {
-    -fx-background-color: #27ae60;
+    -fx-background-color: #b38d27;
 }
 
 Button:pressed {
     -fx-scale-x: 0.9;
     -fx-scale-y: 0.9;
 }
-
 
 #inputNumber {
     -fx-padding: 10;
