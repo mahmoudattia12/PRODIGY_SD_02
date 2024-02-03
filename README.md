@@ -29,7 +29,7 @@ To run the Guessing Game on your local machine you can simply use the executable
 Also you may want run it from your IDE so follow these steps:
 
 1. Clone the repository:
-git clone [https://github.com/your-username/guessing-game.git](https://github.com/mahmoudattia12/PRODIGY_SD_02.git)
+git clone [https://github.com/mahmoudattia12/PRODIGY_SD_02.git](https://github.com/mahmoudattia12/PRODIGY_SD_02.git)
 2. Open the project in your preferred Java IDE.
 3. Run the `Launcher` class to launch the application.
 
