@@ -20,27 +20,19 @@
 
         <HBox alignment="CENTER" spacing="10.0">
             <Label styleClass="Title" text="Range start:"/>
-            <TextField id="inputNumber" fx:id="inputStartRange" onKeyTyped="#onNumberInputTyped"
-                       onMouseClicked="#onTextFieldClicked"
+            <TextField id="inputNumber" fx:id="inputStartRange" onKeyTyped="#onInputKeyTyped"
                        promptText="starting range"/>
 
             <Label styleClass="Title" text="Range end:"/>
-            <TextField id="inputNumber" fx:id="inputEndRange" onKeyTyped="#onNumberInputTyped"
-                       onMouseClicked="#onTextFieldClicked"
+            <TextField id="inputNumber" fx:id="inputEndRange" onKeyTyped="#onInputKeyTyped"
                        promptText="End range"/>
 
             <Button alignment="CENTER" onAction="#onGenerateButtonClick" text="Generate new number"/>
         </HBox>
 
-
-        <HBox alignment="CENTER" spacing="10.0" fx:id="generationHBox">
-            <!--generation label will be added here dynamically-->
-        </HBox>
-
         <HBox alignment="CENTER" spacing="10.0">
             <Label styleClass="Title" text="Guess the Number:"/>
-            <TextField id="inputNumber" fx:id="guessedNumberField" onKeyTyped="#onNumberInputTyped"
-                       onMouseClicked="#onTextFieldClicked"
+            <TextField id="inputNumber" fx:id="guessedNumber" onKeyTyped="#onInputKeyTyped"
                        promptText="guess the number"/>
 
             <Button alignment="CENTER" onAction="#onGuessButtonClick" text="Guess"/>
