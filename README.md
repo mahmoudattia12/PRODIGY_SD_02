@@ -10,6 +10,7 @@ Welcome to the Guessing Game, a simple JavaFX application where users can genera
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Built With](#built-with)
+- [Video](#video)
 
 ## Introduction
 
@@ -63,3 +64,7 @@ git clone [https://github.com/mahmoudattia12/PRODIGY_SD_02.git](https://github.c
 - Java
 - JavaFX
 - CSS
+
+## Video
+
+https://github.com/mahmoudattia12/PRODIGY_SD_02/assets/96799025/99d04a5f-dfe8-4ca8-b1d5-8470fd532feb
