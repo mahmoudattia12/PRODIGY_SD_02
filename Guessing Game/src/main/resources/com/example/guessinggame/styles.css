@@ -42,6 +42,15 @@ Label {
     -fx-translate-y: -50;
 }
 
+#generationLabel {
+    -fx-font-weight: bold;
+    -fx-background-color: #6db2fd;
+    -fx-text-fill: #000000;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+
 Button {
     -fx-background-color: #08b916;
     -fx-text-fill: #ffffff;
