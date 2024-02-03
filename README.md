@@ -54,6 +54,8 @@ git clone [https://github.com/mahmoudattia12/PRODIGY_SD_02.git](https://github.c
 
 ![image](https://github.com/mahmoudattia12/PRODIGY_SD_02/assets/96799025/f282b156-09d6-45b2-a4a6-e5a6d2b7005e)
 
+![image](https://github.com/mahmoudattia12/PRODIGY_SD_02/assets/96799025/a62ba501-df2a-4a97-89cf-62396f55162c)
+
 ![image](https://github.com/mahmoudattia12/PRODIGY_SD_02/assets/96799025/5356a0ec-207c-4f0b-acb7-1b9532e2632e)
 
 ## Built With
