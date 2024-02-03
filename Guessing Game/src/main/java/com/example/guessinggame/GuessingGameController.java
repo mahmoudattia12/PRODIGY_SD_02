@@ -1,5 +1,6 @@
 package com.example.guessinggame;
 
+import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -10,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.util.Random;
 
@@ -95,6 +97,7 @@ public class GuessingGameController {
             label.getStyleClass().add("dynamicLabel");
             label.setId("generationLabel");
             attempts = 0;
+            playCelebrationAnimation(label);
         } else {
             if (guessedNumber > generatedNumber) label = new Label("Too high (larger than the generated number)");
             else label = new Label("Too low (lower than the generated number)");
@@ -136,5 +139,16 @@ public class GuessingGameController {
             // If an exception is thrown, the string is not a number
             return false;
         }
+    }
+
+    private void playCelebrationAnimation(Label label) {
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(1), label);
+        scaleTransition.setFromX(1.0);
+        scaleTransition.setFromY(1.0);
+        scaleTransition.setToX(1.5);
+        scaleTransition.setToY(1.5);
+        scaleTransition.setCycleCount(2);
+        scaleTransition.setAutoReverse(true);
+        scaleTransition.play();
     }
 }
